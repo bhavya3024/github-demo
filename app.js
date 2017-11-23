@@ -42,4 +42,4 @@ messageController(app,io);
 changeSettingController(app);
 profileController(app);
 groupMessageController(app,io);
-server.listen(8080);
+server.listen(process.env.PORT||8080);
