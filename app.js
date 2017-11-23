@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/chatMessenger');
+var port = process.env.port;
+mongoose.connect('mongodb://localhost:'+process.env.port+'/chatMessenger');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
