@@ -1,7 +1,7 @@
 $(document).ready(function(){
 function getDetails(){
     $.ajax({
-        url:'http://localhost:8080/getGeneralDetails',
+        url:'/getGeneralDetails',
         type:'GET',
         success:function(data){
            $("#firstName").val(data.firstName);
