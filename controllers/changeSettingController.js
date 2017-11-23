@@ -147,7 +147,7 @@ app.put('/changeGroupProfilePicture',function(req,res){
  var base64Data = req.body.fileData.split(',').pop();
  fs.writeFile('./files/'+req.body.file,base64Data,'base64',function(err){
  });
- req.body.groupProfilePicture = 'http://localhost:8080/file/'+req.body.file;
+ req.body.groupProfilePicture = '/file/'+req.body.file;
  group.update({groupName:req.body.groupName},{$set:{groupProfilePicture:req.body.groupProfilePicture}},function(err){
  if(err){
     res.status(401).send('Error changing group Profile Picture');
@@ -186,7 +186,7 @@ app.put('/changeProfilePicture',function(req,res){
   var base64Data = req.body.fileData.split(',').pop();
   fs.writeFile("./files/"+req.body.file, base64Data, 'base64', function(err) {
   });
-  req.body.profilePicture = 'http://localhost:8080/file/'+req.body.file;
+  req.body.profilePicture = '/file/'+req.body.file;
   users.update({email:req.session.email},{$set:{profilePicture:req.body.profilePicture}},function(err,data){
   if(err){
     res.status(401).send('Error updating Profile Picture');
