@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/profile.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src ="/assets/profile.js"></script>
+    </head>
+    <body>
+            <div class="mainPage">
+                <div class="leftPage">
+                    <p class ="name" id ="username"></p>
+                    <p class ="name" id="emailId"></p>
+                        <img class = "profilePicture" id="profilePicture">
+                         <button class = "option" id = "buttonContacts">Contacts</button>
+                         <div class = "contactList"></div>
+                         <button class ="option" id = "buttonGroup">Groups</button>
+                         <div class = "groupList">
+                         </div>   
+                         <button class ="option" id ="buttonSettings">Settings</button>
+                         <button class ="option" id = "buttonLogOut">Log Out</button>
+                         <button class ="option" id = "buttonGroup" onclick="window.location.href='http://localhost:8080/user/createGroup.html'">Create a new Group</button>
+                </div>
+                <div class="rightPage">
+                    <div class = "top">
+                        <div class = "details">
+                            <div class="detailName"></div>
+                        </div>
+                    </div>
+                    <div class ="middle">
+                        <div class ="messageContent">
+                        </div>
+                    </div>
+                    <div class = "bottom">
+                    <div class = "attach">
+                    <div class = "dropup">
+                        <button class = "btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                         Attach  
+                         <span class = "caret"></span> 
+                        </button>
+                        <ul class = "dropdown-menu">
+                            <li><p>Image </p><input type="file" id="imageUpload" accept=".png,.jpg,.jpeg"></li>
+                            <li><p>document </p><input type="file" id="documentUpload" accept=".xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf"></li>
+                        </ul>
+                    </div>
+                    </div>
+                      <div class ="messageBox">
+                     <p id ="message" contenteditable="false"></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <script src="/socket.io/socket.io.js"></script>
+    </body>
+</html>

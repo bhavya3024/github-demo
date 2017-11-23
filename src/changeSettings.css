@@ -1,0 +1,93 @@
+.container{
+    margin-top:10px;
+}
+.menu{
+    background-color:#337ab7;
+    color:white;  
+    margin-bottom:10px; 
+    border: 1px;
+    border-color: #337ab7;
+    border-radius:3px;
+    padding:2px;
+    cursor: pointer;
+}
+.return{
+    display: block;
+}
+.changeGeneral,.changePicture,.changePassword,.groupSettings,.changeGroupSettings,#buttonChangeGroupCancel{
+    display: none;
+}
+#labelGroupName{
+ margin-right:80%;
+}
+.text{
+    display:block;
+    float:left;
+    margin-right:5px;
+}
+.btn-default{
+    margin:5px 5px 5px 0px;
+}
+#buttonPicture,#buttonGroupPicture{
+    display: block;
+    margin:0 auto;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#buttonGeneralCancel{
+    visibility: hidden;
+}
+.containerGeneral,.containerPassword,.containerPicture,.containerGroup{
+    background-color:lightblue;
+}
+#groupName{
+    width:60%;
+    float:left;
+    clear:both;
+}
+.profilePicture,.groupProfilePicture{
+    width:100px;
+    height:100px;
+    display: block;
+    margin:0 auto;
+}
+.groupProfilePicture{
+    margin-top:25px;
+    clear:both;
+}
+#filePicture,#groupFilePicture{
+    float:left;
+    margin-right:-7%;
+    margin-left:36%;
+    margin-top:11px;
+}
+label[for="groupProfilePicture"]{
+    float:left;
+    clear:both;
+}
+#buttonChangeGroupName,#buttonChangeGroupCancel{
+    margin-left:5px;
+    float:left;
+    margin-top:0px;
+}
+#filePicture,#groupFilePicture, #buttonPictureCancel,#buttonGroupPictureCancel,.adminGroupSettings{
+    display:none;
+}
+#buttonAddMembers{
+    background-color:white;
+}
+#buttonAddMembers,#buttonDeleteMembers{
+margin-top:10px;
+margin-bottom:10px;
+display: none;
+}
+.deleteMembers,.addMembers{
+    width:50%;
+    height:auto;
+}
+.deleteMember ,.addMember{
+    margin:5px;
+}
+
+
+

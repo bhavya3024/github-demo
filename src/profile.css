@@ -1,0 +1,142 @@
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+}
+.mainPage{
+    display:flex;
+    height:100%;
+    width:100%;
+    flex-direction:row;
+}
+.leftPage{
+   width:20%;
+   background-color:lightgray;
+   flex-basis:260px;
+   flex-shrink: 0;
+}
+.rightPage{
+    height:auto;
+    display:flex;
+    flex:auto;
+    flex-direction:column;
+    overflow:hidden;
+}
+.dropdown-menu{
+    z-index: 201;
+}
+.top{
+border:1px solid red;
+flex-basis:70px;
+flex-shrink:0;
+}
+.middle{
+    border:1px solid gray;
+    flex:4;
+    display: flex;
+    flex-flow:column-reverse;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.msg{
+    width:100%;
+    background-color:orange;
+    word-wrap: break-word;
+    margin-bottom:10px;
+    display:inline-block;
+}
+.image,.document{
+    float:left;
+    clear:both;
+    height:150px;
+    width:150px;
+    margin-bottom:10px;
+    position:relative;
+    display: block;
+    border:1px solid gray;
+}
+.imageContent,.documentContent{
+    height:200px;
+    width:100%;
+    border:1px solid red;
+    display:inline-block;
+    margin-bottom:10px;
+}
+.messageContent{
+    width:100%;
+}
+.bottom{
+  border: 1px solid green;
+  flex-basis: 70px;
+  display: flex;
+  bottom:0px;
+}
+.option{
+    outline:none;
+    border:none;
+    background-color: inherit;
+    width:100%;
+    font-size:20px;
+}
+.contact, .group{
+    width:100%;
+    outline:none;
+    background-color:inherit;
+    border:none;
+}
+.contact{
+    display:none;
+}
+.contact:hover,.group:hover{
+    background-color:orange
+}
+.option:hover{
+    background-color:lawngreen;
+}
+.contactList{
+    width:100%;
+}
+.attach{
+  flex-basis:70px;
+}
+.messageBox{
+    flex:1;
+    width:100%;
+    text-overflow:ellipsis;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+p{
+    overflow-wrap: break-word;
+}
+.msgStatus,.imageStatus,.documentStatus{
+    float:right;
+    clear:both;
+}
+.imageFrom,.documentFrom{
+    float:left;
+    clear:both;
+}
+.name{
+    text-align:center;
+} 
+.imageProfileContainer{
+    margin:auto;
+}
+.profilePicture{
+   display:block; 
+   margin:5px auto;
+   width:100px;
+   height:100px;   
+}
+.changePicture .btn-default{
+margin:3px auto;
+display:block;    
+}
+.group{
+    display:block;
+    float: left;
+}
+
+

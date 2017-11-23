@@ -1,0 +1,10 @@
+.groupMember{
+  border: 1px solid black;
+  padding: 5px;
+}
+li{
+    list-style-type:none;
+}
+input[type=checkbox]{
+    float:left;
+}

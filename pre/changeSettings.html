@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Change Settings</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assets/changeSettings.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src ="/assets/changeSettings.js"></script> 
+    </head>
+    <body>
+    <div class = "container">
+        <div class = "containerGeneral">
+            <div id = "menuGeneral" class ="menu"><p class="text">Change Name/Email </p><div class="generalArrow"><span class='fa fa-chevron-down'></span></div></div>
+           <div class = "changeGeneral">
+               <p>First Name</p>
+               <input type="text" class="form-control" id="firstName" disabled>
+               <p class = "text-danger" id="errorFirstName"></p>
+               <p>Last Name</p>
+               <input type="text" class="form-control" id="lastName" disabled>
+               <p class = "text-danger" id="errorLastName"></p>
+               <p>Email:</p>
+               <input type="email" class="form-control" id="email" disabled>
+               <p class = "text-danger" id="errorEmail"></p>
+               <button class ="btn btn-default" id="buttonGeneralChange">Change</button> 
+               <button class ="btn btn-default" id="buttonGeneralCancel">Cancel</button>
+           </div>
+        </div>
+        <div class = "containerPicture">
+            <div id = "menuPicture" class ="menu"><p class="text">Change Profile Picture </p><div class="pictureArrow"><span class='fa fa-chevron-down'></span></div></div>            
+            <div class = "changePicture">
+                <img class="profilePicture" id="profilePicture">
+                <button class="btn btn-default" id="buttonPicture">Change</button>
+                <input type="file" accept=".png,.jpg,.jpeg" id="filePicture">
+                <button class = "btn btn-default" id="buttonPictureCancel">Cancel</button>
+            </div>
+        </div>
+         <div class = "containerPassword">
+            <div id = "menuPassword" class="menu"><p class="text">Change Password </p><div class="passwordArrow"><span class='fa fa-chevron-down'></span></div></div>
+             <div class = "changePassword">
+                 <div class="form-group">
+                     <label for="oldPassword">Old Password:</label>
+                     <input type="password" class="form-control" id="oldPassword">
+                     <label class="text-danger" id="errorOldPassword"></label>
+                <div class="form-group">
+                    <label for= "newPassword">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="minimum 8 characters">
+                    <label class="text-danger" id="errorNewPassword"></label>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm new password</label>
+                    <input type="password" class="form-control" id="confirmPassword">
+                    <label class="text-danger" id="errorConfirmPassword"></label>
+                </div>
+                <button type="submit" class="btn btn-default" id="buttonSubmit">Submit</button>
+             </div>
+            </div>
+            </div>
+            <div class ="containerGroup">
+               <div id = "menuGroup" class = "menu"><p class ="text">Group Settings</p><div class="passwordArrow"><span class='fa fa-chevron-down'></span></div></div> 
+               <div class = "groupSettings">
+                   <label>Choose a Group</label>
+                   <select class = "form-control" id ="groups">
+                   </select>
+                   <div class = "changeGroupSettings">
+                       <label for="groupName" id="labelGroupName">Group Name</label>
+                       <input type = "text" class = "form-control" id="groupName" disabled>
+                       <button class ="btn btn-default" id="buttonChangeGroupName">Change</button>
+                       <button class ="btn btn-default" id="buttonChangeGroupCancel">Cancel</button>
+                       <label for="groupProfilePicture">Group Profile Picture</label>
+                       <img class="groupProfilePicture" id="groupProfilePicture">
+                       <button class="btn btn-default" id="buttonGroupPicture">Change</button>
+                       <input type="file" accept=".png,.jpg,.jpeg" id="groupFilePicture">
+                       <button class ="btn btn-default" id="buttonGroupPictureCancel">Cancel</button>
+                   <div class ="adminGroupSettings">
+                       <label id="labelAddGroupMembers">Add Group Members</label>
+                       <div class = "addMembers">
+                       </div>
+                       <button class = "btn btn-defualt" id="buttonAddMembers">Add Members</button>
+                       <label id="labelDeleteGroupMembers">Delete Group Members</label>
+                        <div class ="deleteMembers">
+                        </div>
+                        <button class = "btn btn-default" id="buttonDeleteMembers">Delete Members</button>
+                    </div>
+                    </div>
+                   </div>
+               </div>
+               <a class ='return' href="http://localhost:8080/user/profile.html">Return to profile page</a>
+               </div>   
+    </body>
+</html>
