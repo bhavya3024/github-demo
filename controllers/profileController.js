@@ -68,7 +68,7 @@ module.exports = function(app){
             name:req.session.name,
             email:req.session.email
           },
-          groupProfilePicture:'http://localhost:8080/file/default-profile.png'
+          groupProfilePicture:'/file/default-profile.png'
         });
         grp.save(function(err){
        if(err){

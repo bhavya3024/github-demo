@@ -31,7 +31,7 @@ data = {
     password:$password.val()
 }    
 $.ajax({
-url:'http://localhost:8080/authenticate',
+url:'/authenticate',
 type:'POST',
 data:JSON.stringify(data),
 contentType:'application/json',

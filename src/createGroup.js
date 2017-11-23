@@ -30,7 +30,7 @@ function getSelectedMembers(data){
         }
         if(allSet === true){
            $.ajax({
-                 url:'http://localhost:8080/createGroup',
+                 url:'/createGroup',
                  type:'POST',
                  data:{
                      name:groupName.val(),
@@ -38,7 +38,7 @@ function getSelectedMembers(data){
                  },
                  success:function(data){
                     alert(data);
-                    window.location.href = "http://localhost:8080/user/profile.html";
+                    window.location.href = "/user/profile.html";
                  },
                  error:function(jqXHR){
                    alert(jqXHR.responseText);
@@ -48,7 +48,7 @@ function getSelectedMembers(data){
 });
 }    
 $.ajax({
-     url:'http://localhost:8080/showMembers',
+     url:'/showMembers',
      type:'GET',
      success:function(data){ 
          $(".groupMembers").append("<ul>");

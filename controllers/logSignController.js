@@ -15,10 +15,10 @@ module.exports = function(app){
     });
     app.get('/',function(req,res){
      if(req.session.email){
-       res.redirect('http://localhost:8080/user/profile.html');
+       res.redirect('/user/profile.html');
      }
      else{
-       res.redirect('http://localhost:8080/main/welcome.html');
+       res.redirect('/main/welcome.html');
      }
     });
     app.get('/logOut',function(req,res){
@@ -61,7 +61,7 @@ var user = new users({
         lastName:req.body.lastName,
         email:req.body.email,
         password:req.body.password,
-        profilePicture:'http://localhost:8080/file/default-profile.png',
+        profilePicture:'/file/default-profile.png',
      });
      if(err)
      {

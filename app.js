@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 });
 app.get('/main/*',function(req,res,next){
  if(req.session.email){
-   res.redirect('http://localhost:8080/user/profile.html');
+   res.redirect('/user/profile.html');
  }
  else{
      next();
@@ -31,7 +31,7 @@ app.get('/user/*',function(req,res,next){
    next();
  }
  else{
-   res.redirect('http://localhost:8080/main/welcome.html');
+   res.redirect('/main/welcome.html');
  }
 });
 app.use('/user',express.static(path.join(__dirname,'pre')));

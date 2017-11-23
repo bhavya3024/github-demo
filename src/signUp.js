@@ -60,7 +60,7 @@ if(allSet === true)
       password:$password.val()       
     };
    $.ajax({
-    url:'http://localhost:8080/register',
+    url:'/register',
     type:'POST',
     data:JSON.stringify(data),
     contentType:"application/json",

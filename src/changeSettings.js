@@ -27,7 +27,7 @@ $("#menuPassword").click(function(){
 });
 function addDeleteMembers(){
     $.ajax({
-        url:'http://localhost:8080/addDeleteMembers',
+        url:'/addDeleteMembers',
         type:'POST',
         data:{
             groupName:$("#groups").find("option:selected").val()
@@ -88,7 +88,7 @@ if(count === 0)
 }
 else{
 $.ajax({
-   url:'http://localhost:8080/addMembers',
+   url:'/addMembers',
    type:'PUT',
    data:{
        groupName:$("#groups").find("option:selected").val(),
@@ -121,7 +121,7 @@ $("#buttonDeleteMembers").click(function(){
     }
     else{
       $.ajax({
-          url:'http://localhost:8080/deleteMembers',
+          url:'/deleteMembers',
           type:'PUT',
           data:{
              groupName:$("#groups").find("option:selected").val(),
@@ -139,7 +139,7 @@ $("#buttonDeleteMembers").click(function(){
 });
 function checkAdmin(){
 $.ajax({
-    url:'http://localhost:8080/checkAdmin',
+    url:'/checkAdmin',
     type:'POST',
     data:{
         groupName:$("#groups").find("option:selected").val()
@@ -157,7 +157,7 @@ $.ajax({
 }
 function showGroups(){
     $.ajax({
-        url:'http://localhost:8080/showGroups',
+        url:'/showGroups',
         type:'GET',
         success:function(data){
                $("#groups").empty();
@@ -200,7 +200,7 @@ else{
     }
     else{
    $.ajax({
-      url:'http://localhost:8080/changeGroupName',
+      url:'/changeGroupName',
       type:'PUT',
       data:{
           oldGroupName:$("#groups").find("option:selected").text(),
@@ -265,7 +265,7 @@ $("#buttonGeneralChange").click(function(){
       }
       if(allSet === true){ 
         $.ajax({ 
-         url:'http://localhost:8080/changeGeneral',
+         url:'/changeGeneral',
          type:'PUT',
          data:{
          firstName:firstName.val(),
@@ -317,10 +317,10 @@ $("#groupFilePicture").change(function(){
        var reader = new FileReader();
        reader.onload = function(e){
            $.ajax({
-              url:'http://localhost:8080/changeGroupProfilePicture',
+              url:'/changeGroupProfilePicture',
               type:'PUT',
               data:{
-               groupProfilePicture:'http://localhost:8080/file/'+fileName,
+               groupProfilePicture:'/file/'+fileName,
                fileData:e.target.result,
                file:fileName,
                groupName:$("#groups").find("option:selected").text()
@@ -346,10 +346,10 @@ $("#filePicture").change(function(){
        var reader = new FileReader();
        reader.onload = function(e){
            $.ajax({
-               url:'http://localhost:8080/changeProfilePicture',
+               url:'/changeProfilePicture',
                type:'PUT',
                data:{
-                profilePicture:'http://localhost:8080/file/'+fileName,
+                profilePicture:'/file/'+fileName,
                 fileData:e.target.result,
                 file:fileName
                },
@@ -434,7 +434,7 @@ if(allSet === true){
     else{
       errorConfirmPassword.text("");
        $.ajax({
-           url:'http://localhost:8080/changePassword',
+           url:'/changePassword',
            type:'PUT',
            data:{
                oldPassword:oldPassword.val(),
@@ -443,7 +443,7 @@ if(allSet === true){
            success:function(data){
                alert(data);
                errorConfirmPassword.text("");
-               window.location.href = 'http://localhost:8080/main/logIn.html';
+               window.location.href = '/main/logIn.html';
            },
            error:function(jqXHR,textStatus,errorThrown){
                errorConfirmPassword.text(jqXHR.responseText);

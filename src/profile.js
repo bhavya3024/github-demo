@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var key,content,contacts,email,name,currentName,currentEmail,date,month,upload,socket=io(),profilePicture,groupName;
 $("#buttonSettings").click(function(){
- window.location.href='http://localhost:8080/user/changeSettings.html';
+ window.location.href='/user/changeSettings.html';
 });
 function loadGroupMessage(groupName){
     socket.emit('loadGroupMessage',groupName);
@@ -84,7 +84,7 @@ function sendMessage(link){
         link = '';
     }
     else{
-        link = 'http://localhost:8080/file/'+link;
+        link = '/file/'+link;
     }
     var data = {
         fromName:currentName,
@@ -120,7 +120,7 @@ function sendGroupMessage(link){
         link = '';
     }
     else{
-        link = 'http://localhost:8080/file/'+link;
+        link = '/file/'+link;
     }
     var data={
         from:{
@@ -174,7 +174,7 @@ $("#buttonContacts").click(function(){
    $(".contact").toggle();
 });
 $.ajax({
-   url:'http://localhost:8080/contacts',
+   url:'/contacts',
    type:'GET',
    success:function(data){
    var room;
@@ -211,7 +211,7 @@ $("#buttonGroup").click(function()
    }
    else{
        $.ajax({
-            url:'http://localhost:8080/showGroups',
+            url:'/showGroups',
             type:'GET',
             success:function(data){
                 for(let i = 0; i<data.length;i++){
@@ -246,11 +246,11 @@ $("#buttonGroup").click(function()
 });
 $("#buttonLogOut").click(function(){
 $.ajax({
-   url:"http://localhost:8080/logOut",
+   url:"/logOut",
    type:'GET',
    success:function(data)
    {
-      window.location.href='http://localhost:8080/main/welcome.html';
+      window.location.href='/main/welcome.html';
    },
    error:function()
    {
