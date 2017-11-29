@@ -237,7 +237,7 @@ $.ajax({
    url:"/logOut",
    type:'GET',
    success:function(data){
-      window.location.href='/welcome.html';
+      window.location.href='/main/welcome.html';
    },
    error:function(){
        
