@@ -8,27 +8,51 @@ html,body{
     display:flex;
     height:100%;
     width:100%;
-    flex-direction:row;
-}
-.leftPage{
-   width:20%;
-   background-color:lightgray;
-   flex-basis:260px;
-   flex-shrink: 0;
-}
-.rightPage{
-    height:auto;
-    display:flex;
-    flex:auto;
     flex-direction:column;
-    overflow:hidden;
 }
 .dropdown-menu{
     z-index: 201;
 }
+.navbar{
+ display:flex;
+ background-color:#333;
+ flex-shrink: 0;
+ flex-direction:row;
+ float: basis 60px;
+ margin:0;
+}
+.option{
+    text-decoration:none;
+    flex:1;
+    font-size:16px;
+    cursor:pointer;
+    color:white;
+    display: block;
+    padding-top:15px;
+    text-align:center;
+    position:relative;
+}
+.navbar a{
+    padding:14px 16px;
+}
+.navbar a:hover{
+    background-color:red; 
+}
+.option:hover{
+    color:white;
+    text-decoration:none;
+    background-color:red;
+}
+.rightPage{
+ height:auto;
+ display:flex;
+ flex:auto;
+ flex-direction:column;
+ overflow:hidden;
+}
 .top{
 border:1px solid red;
-flex-basis:70px;
+flex-basis:40px;
 flex-shrink:0;
 }
 .middle{
@@ -41,7 +65,7 @@ flex-shrink:0;
 }
 .msg{
     width:100%;
-    background-color:orange;
+    background-color:lightgrey;
     word-wrap: break-word;
     margin-bottom:10px;
     display:inline-block;
@@ -68,44 +92,51 @@ flex-shrink:0;
 }
 .bottom{
   border: 1px solid green;
-  flex-basis: 70px;
-  display: flex;
-  bottom:0px;
+  flex-basis:60px;
+  flex-shrink:0;
+  display:flex;
 }
-.option{
-    outline:none;
-    border:none;
-    background-color: inherit;
-    width:100%;
-    font-size:20px;
-}
-.contact, .group{
-    width:100%;
-    outline:none;
-    background-color:inherit;
-    border:none;
-}
-.contact{
+.groupList,.contactList{
     display:none;
+    position:absolute;
+    background-color:lightgray;
+    min-width:160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:201;
 }
-.contact:hover,.group:hover{
-    background-color:orange
+.groupList a, .contactList a{
+   float:none;
+   color:black;
+   text-decoration:none;
+   display:block;
+   text-align:left;
 }
-.option:hover{
-    background-color:lawngreen;
+.dropdownGroup:hover .groupList{
+    display:block;
 }
-.contactList{
-    width:100%;
+.dropdownContact:hover .contactList{
+    display:block;
 }
-.attach{
-  flex-basis:70px;
+.dropdownContact,.dropdownGroup{
+    float:left;
+    overflow:hidden;
+    font-size:16px;
+    flex:1;
+}
+.listGroup,.listContact{
+font-size:16px;
+border:none;
+outline:none;
+color:white;
+padding:14px 16px;
+background-color:inherit;
 }
 .messageBox{
     flex:1;
     width:100%;
     text-overflow:ellipsis;
-    word-wrap: break-word;
-    overflow-x: hidden;
+    word-wrap:break-word;
+    overflow-x:hidden;
 }
 p{
     overflow-wrap: break-word;
@@ -117,26 +148,48 @@ p{
 .imageFrom,.documentFrom{
     float:left;
     clear:both;
-}
-.name{
-    text-align:center;
 } 
 .imageProfileContainer{
     margin:auto;
 }
 .profilePicture{
-   display:block; 
+   float:right; 
    margin:5px auto;
-   width:100px;
-   height:100px;   
+   width:50px;
+   height:50px;  
 }
 .changePicture .btn-default{
-margin:3px auto;
-display:block;    
+   margin:3px auto;
+   display:block;    
 }
-.group{
+@media screen and (max-width:600px){
+.navbar{
     display:block;
-    float: left;
 }
+.option{
+    width:50%;
+    float:left;
+    font-size:10px;
+    padding: 7px 8px;
+}
+.dropdownContact,.dropdownGroup{
+    width:50%;
+    font-size:10px;
+    text-align: center;
+    display: block;
+}
+.listContact,.listGroup{
+    font-size:10px;
+}
+.contactList,.groupList{
+    width:50%;
+}
+.profilePicture{
+    float:none;
+    display: block;
+}
+
+}
+
 
 

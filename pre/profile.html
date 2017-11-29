@@ -13,18 +13,21 @@
     </head>
     <body>
             <div class="mainPage">
-                <div class="leftPage">
-                    <p class ="name" id ="username"></p>
-                    <p class ="name" id="emailId"></p>
-                        <img class = "profilePicture" id="profilePicture">
-                         <button class = "option" id = "buttonContacts">Contacts</button>
-                         <div class = "contactList"></div>
-                         <button class ="option" id = "buttonGroup">Groups</button>
-                         <div class = "groupList">
-                         </div>   
-                         <button class ="option" id ="buttonSettings">Settings</button>
-                         <button class ="option" id = "buttonLogOut">Log Out</button>
-                         <button class ="option" id = "buttonGroup" onclick="window.location.href='/user/createGroup.html'">Create a new Group</button>
+                <div class="navbar">
+                        <div class = "dropdownContact">
+                                <button class = "listContact" id = "buttonContacts">Contacts</button>
+                                 <div class = "contactList">
+                                 </div>
+                            </div>
+                            <div class ="dropdownGroup">
+                                <button class ="listGroup" id = "buttonGroup">Groups</button>
+                                 <div class = "groupList">
+                                </div>
+                            </div>   
+                         <a id ="buttonSettings" class ="option">Settings</a>
+                         <a id ="buttonLogOut" class ="option">Log Out</a>
+                         <a id = "buttonGroup" class ="option" href="http://localhost:8080/user/createGroup.html">Create a new Group</a>
+                         <img class = "profilePicture" id="profilePicture"> 
                 </div>
                 <div class="rightPage">
                     <div class = "top">
@@ -37,20 +40,15 @@
                         </div>
                     </div>
                     <div class = "bottom">
-                    <div class = "attach">
                     <div class = "dropup">
-                        <button class = "btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                         Attach  
-                         <span class = "caret"></span> 
-                        </button>
+                        <button class = "btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Attach  <span class = "caret"></span></button>
                         <ul class = "dropdown-menu">
                             <li><p>Image </p><input type="file" id="imageUpload" accept=".png,.jpg,.jpeg"></li>
                             <li><p>document </p><input type="file" id="documentUpload" accept=".xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf"></li>
                         </ul>
                     </div>
-                    </div>
                       <div class ="messageBox">
-                     <p id ="message" contenteditable="false"></p>
+                      <p id ="message" contenteditable="false"></p>
                       </div>
                     </div>
                 </div>

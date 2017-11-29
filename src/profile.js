@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var key,content,contacts,email,name,currentName,currentEmail,date,month,upload,socket=io(),profilePicture,groupName;
 $("#buttonSettings").click(function(){
- window.location.href='/user/changeSettings.html';
+ window.location.href='http://localhost:8080/user/changeSettings.html';
 });
 function loadGroupMessage(groupName){
     socket.emit('loadGroupMessage',groupName);
@@ -84,7 +84,7 @@ function sendMessage(link){
         link = '';
     }
     else{
-        link = '/file/'+link;
+        link = 'http://localhost:8080/file/'+link;
     }
     var data = {
         fromName:currentName,
@@ -120,7 +120,7 @@ function sendGroupMessage(link){
         link = '';
     }
     else{
-        link = '/file/'+link;
+        link = 'http://localhost:8080/file/'+link;
     }
     var data={
         from:{
@@ -170,11 +170,8 @@ $("#message").keypress(function(e){
       }
   }
 });
-$("#buttonContacts").click(function(){
-   $(".contact").toggle();
-});
 $.ajax({
-   url:'/contacts',
+   url:'http://localhost:8080/contacts',
    type:'GET',
    success:function(data){
    var room;
@@ -184,8 +181,8 @@ $.ajax({
     currentEmail = data.currentEmail;
     profilePicture = data.profilePicture;
     $("#profilePicture").attr("src",profilePicture);
-    for(let i = 0; i<contacts.length; i++){
-    $(".contactList").append("<button class = 'contact' id ="+contacts[i]._id+">"+contacts[i].firstName+' '+contacts[i].lastName+"</button>"); 
+for(let i = 0; i<contacts.length; i++){
+    $(".contactList").append("<a id ="+contacts[i]._id+">"+contacts[i].firstName+' '+contacts[i].lastName+"</a>"); 
     $("#"+contacts[i]._id).click(function(){
         $("#message").attr('contenteditable','true');
         $(".groupMembers").remove();
@@ -204,56 +201,45 @@ $.ajax({
     alert('no contacts');
    }
 });
-$("#buttonGroup").click(function()
-{
-   if($(".groupList").find(".group").length>0){
-       $(".group").remove();
-   }
-   else{
-       $.ajax({
-            url:'/showGroups',
-            type:'GET',
-            success:function(data){
-                for(let i = 0; i<data.length;i++){
-                    $(".groupList").append('<button class = "group" id='+data[i]._id+'>'+data[i].groupName+'</button>');
-                    $("#"+data[i]._id).click(function(){
-                        var text="";
-                        $("#profilePicture").attr("src",data[i].groupProfilePicture);
-                        $("#message").attr('contenteditable','true');
-                        $(".detailName").text(data[i].groupName);
-                        loadGroupMessage(data[i].groupName);
-                        $(".groupMembers").remove();
-                        $(".details").append("<div class='groupMembers'></div>");
-                        for(var j  = 0; j<data[i].groupMembers.length;j++){
-                            if(j === data[i].groupMembers.length-1){
-                              text = text + data[i].groupMembers[j].name;
-                            }
-                            else{
-                              text = text + data[i].groupMembers[j].name + ", ";
-                            }
-                        }
-                        $(".groupMembers").text(text);
-                        socket.emit('groupRoom',data[i].groupName);
-                    });
+$.ajax({
+    url:'http://localhost:8080/showGroups',
+    type:'GET',
+    success:function(data){
+        for(let i = 0; i<data.length;i++){
+            $(".groupList").append('<a id='+data[i]._id+'>'+data[i].groupName+'</a>');
+            $("#"+data[i]._id).click(function(){
+                var text="";
+                $("#profilePicture").attr("src",data[i].groupProfilePicture);
+                $("#message").attr('contenteditable','true');
+                $(".detailName").text(data[i].groupName);
+                loadGroupMessage(data[i].groupName);
+                $(".groupMembers").remove();
+                $(".details").append("<div class='groupMembers'></div>");
+                for(var j  = 0; j<data[i].groupMembers.length;j++){
+                    if(j === data[i].groupMembers.length-1){
+                      text = text + data[i].groupMembers[j].name;
+                    }
+                    else{
+                      text = text + data[i].groupMembers[j].name + ", ";
+                    }
                 }
-            },
-            error:function(jqXHR)
-            {
+                $(".groupMembers").text(text);
+                socket.emit('groupRoom',data[i].groupName);
+            });
+        }
+    },
+    error:function(jqXHR){
 
-            }
-           });   
-   }
-});
+    }
+   });   
 $("#buttonLogOut").click(function(){
 $.ajax({
-   url:"/logOut",
+   url:"http://localhost:8080/logOut",
    type:'GET',
-   success:function(data)
-   {
-      window.location.href='/main/welcome.html';
+   success:function(data){
+      window.location.href='http://localhost:8080/main/welcome.html';
    },
-   error:function()
-   {
+   error:function(){
        
    }
 });
