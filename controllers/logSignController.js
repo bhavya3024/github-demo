@@ -61,7 +61,7 @@ var user = new users({
         lastName:req.body.lastName,
         email:req.body.email,
         password:req.body.password,
-        profilePicture:'/file/default-profile.png',
+        profilePicture:'/file/default-profile.jpg',
      });
      if(err)
      {
