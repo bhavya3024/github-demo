@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var port = process.env.port;
-mongoose.connect('mongodb://chatmessenger:chatmessenger@ds119406.mlab.com:19406/chatmessenger');
+mongoose.connect('mongodb://chatmessenger:chatmessenger@ds123976.mlab.com:23976/chatmessenger');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
