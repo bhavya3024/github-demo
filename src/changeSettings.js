@@ -67,7 +67,6 @@ function addDeleteMembers(){
            }
         },
         error:function(jqXHR){
-              console.log(jqXHR.responseText);
         }   
     });
 }
@@ -326,14 +325,12 @@ $("#groupFilePicture").change(function(){
                groupName:$("#groups").find("option:selected").text()
               },
               success:function(data){
-                console.log(data);
                   $("#groupProfilePicture").attr("src",data[0].groupProfilePicture);
                   $("#buttonGroupPictureCancel,#groupFilePicture").css("display","none");
                   $("#buttonGroupPicture").css("display","block");
               },
-              error:function(jqXHR)
+              error:function()
               {
-                  console.log(jqXHR.responseText);
               }
            });
        }

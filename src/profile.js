@@ -91,7 +91,7 @@ function sendMessage(link){
         fromEmail:currentEmail,
         toEmail:email,
         toName:name,
-        message:$("#message").text(),
+        message:$("#message").val(),
         date:new Date(),
         link:link
     };
@@ -128,7 +128,7 @@ function sendGroupMessage(link){
             email:currentEmail
         },
         groupName:$(".detailName").text(),
-        message:$("#message").text(),
+        message:$("#message").val(),
         date:new Date(),
         link:link
     }
@@ -150,20 +150,19 @@ function sendFile(f){
     });
 }
 $("#message").keypress(function(e){
-  key = e.which;
   date = new Date();
-  if(key === 13){
-      content = $("#message").text();
+  if(e.key === 'Enter'){
+      content = $("#message").val();
       if(content !== null){
           if($(".details").find(".groupMembers").length >0){
             sendGroupMessage();
             content = "";
-            $("#message").text("");
+            $('#message').val('');
           } 
           else{
           sendMessage();
           content = "";
-          $("#message").text("");
+           $('#message').val('');
           }          
       }
       else{

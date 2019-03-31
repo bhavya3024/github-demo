@@ -36,13 +36,11 @@ socket.on('groupMessage',function(data){
        link:data.link,
        date:data.date
       });
-      console.log(grpMsg);
       grpMsg.save(function(err){
        if(err){
          throw err;
        }
        else{
-         console.log('saved');
          io.in(grpMsg.groupName).emit('newGroupMessage',grpMsg);
        }
      });

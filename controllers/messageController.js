@@ -23,7 +23,6 @@ module.exports = function(app,io){
         msg.save(function(err){
        if(err)
        {
-         console.log(err);
          socket.emit('error');
        }
        else{

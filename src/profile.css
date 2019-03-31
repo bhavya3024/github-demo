@@ -90,6 +90,10 @@ flex-shrink:0;
 .messageContent{
     width:100%;
 }
+.message{
+    border: 1px solid gray;
+    width: 100%!important;
+}
 .bottom{
   border: 1px solid green;
   flex-basis:60px;

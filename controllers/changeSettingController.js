@@ -85,7 +85,6 @@ group.find({groupName:req.body.groupName},{groupMembers:1,_id:0},function(err,da
      if(err)
        throw err;
       else{
-        console.log(data[0].groupMembers);
        data[0].groupMembers = data[0].groupMembers.filter(function(e){
           return e.email !== req.session.email ;
        });
@@ -104,12 +103,10 @@ app.put('/changePassword',function(req,res){
       res.status(401).send('Error changing password');
     }
     else if(data){
-      console.log(data);
       req.session.destroy();
       res.status(200).send('Password successfully changed');
     }
     else{
-      console.log(data);
       res.status(401).send('Invalid credentials');
     }
 });

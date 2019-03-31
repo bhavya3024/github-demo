@@ -48,7 +48,6 @@ app.post('/authenticate',function(req,res){
 });
 app.post('/register',function(req,res){
   group.find(function(err,groups){
-    console.log(groups);
      var groupCheck = [],groupName,groupJSON={};
     for(var i = 0; i<groups.length;i++){
         groupName  = groups[i].groupName;
